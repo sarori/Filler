@@ -2,7 +2,8 @@ FILL	=	sapark.filler
 VISU	=	visualizer
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g -fsanitize=address
+# -g -fsanitize=address
 
 LIB		=	-L ~/.brew/lib -l SDL2 -L ~/.brew/lib -l SDL2_ttf
 INCLUDE	=	-Iincludes -Iframeworks/SDL2.framework/includes/SDL2 -Iframeworks/SDL2_ttf.framework/includes
