@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_idx.c                                    :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/02 17:15:35 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/19 01:29:07 by sapark           ###   ########.fr       */
+/*   Created: 2019/10/19 01:03:46 by sapark            #+#    #+#             */
+/*   Updated: 2019/10/19 01:07:06 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strchr_idx(const char *s, char c)
+char	*ft_strndup(const char *s1, int n)
 {
-	int	i;
+	char	*res;
+	int		i;
 
+	if (!(res = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (s1[i] && n > i)
 	{
-		if (s[i] == c)
-			break ;
+		str[i] = s1[i];
 		i++;
 	}
-	if (s[i] == '\0')
-		return (-1);
-	return (i);
+	str[i] = '\0';
+	return (str);
 }
