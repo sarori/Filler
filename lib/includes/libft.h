@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 18:44:56 by sapark            #+#    #+#             */
-/*   Updated: 2019/09/29 19:13:13 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/19 22:09:00 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ char				*ft_strtrimby(char const *s, char c);
 char				*ft_str_toupper(char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+char				*ft_strndup(const char *s1, int n);
 
 /*
 **---------------------number descriptor---------------------
@@ -146,5 +147,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 int					get_next_line(const int fd, char **line);
 int					get_next_line_f(int fd, char **file);
+int					get_next_line_lst(int fd, char **line);
 
 #endif

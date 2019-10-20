@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 01:03:46 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/19 01:07:06 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/19 20:31:36 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strndup(const char *s1, int n)
 	i = 0;
 	while (s1[i] && n > i)
 	{
-		str[i] = s1[i];
+		res[i] = s1[i];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	res[i] = '\0';
+	return (res);
 }
