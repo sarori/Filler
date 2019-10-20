@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 18:44:56 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/19 22:09:00 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/19 23:44:17 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ char				*ft_str_toupper(char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strndup(const char *s1, int n);
+void    			free_dpchar(char **arr);
 
 /*
 **---------------------number descriptor---------------------

@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/18 15:47:48 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/19 23:28:33 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_set
 	t_cor			bestspot;
 }					t_set;
 
-void	player_data(t_set *filler, int fd);
-void	store_data(t_set *filler, int fd);
+void	player_data(t_set *f);
+void	store_data(t_set *f);
 
 #endif
