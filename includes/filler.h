@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/19 23:28:33 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/20 23:29:36 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 #include <stdio.h>
 //
 
-typedef struct		s_cor
+typedef struct		s_coor
 {
     int				x;
 	int				y;
-}					t_cor;
+}					t_coor;
 
 typedef struct		s_set
 {
@@ -32,16 +32,21 @@ typedef struct		s_set
 	char			**board;
 	char			*p1;
 	char			*p2;
-	int				is_first;
 	int				size;
 	int				point;
-	char			**token;
-	t_cor			board_size;
-	t_cor			token_size;
-	t_cor			bestspot;
+	char			**piece;
+	t_coor			board_size;
+	t_coor			piece_size;
+	t_coor			bestspot;
 }					t_set;
 
-void	player_data(t_set *f);
-void	store_data(t_set *f);
+void	player_data(t_set *f, FILE *fptr);
+void	store_data(t_set *f, FILE *fptr);
+void	get_board(t_set *f, FILE *fptr);
+
+void	get_board(t_set *f, FILE *fptr);
+void	player_data(t_set *f, FILE *fptr);
+void	piece_data(t_set *f, char *piece_line, FILE *fptr);
+void	store_data(t_set *f, FILE *fptr);
 
 #endif

@@ -1,0 +1,7 @@
+f->p1:xX
+f->p2:oO
+xsize:17
+ysize:15
+c
+random
+d
