@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/20 23:29:36 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/21 23:38:31 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ typedef struct		s_set
 	t_coor			bestspot;
 }					t_set;
 
-void	player_data(t_set *f, FILE *fptr);
-void	store_data(t_set *f, FILE *fptr);
-void	get_board(t_set *f, FILE *fptr);
+// void	player_data(t_set *f, FILE *fptr);
+// void	store_data(t_set *f, FILE *fptr);
+// void	get_board(t_set *f, FILE *fptr);
 
-void	get_board(t_set *f, FILE *fptr);
 void	player_data(t_set *f, FILE *fptr);
 void	piece_data(t_set *f, char *piece_line, FILE *fptr);
 void	store_data(t_set *f, FILE *fptr);
+void	board_data(t_set *f, char *board_line, FILE *fptr);
 
 #endif

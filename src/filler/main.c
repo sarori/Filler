@@ -11,14 +11,18 @@ int	main(void)
 	f = ft_memalloc(sizeof(t_set));
 	if (!f->p1)
 		player_data(f, fptr);
-	
+
 	store_data(f, fptr);
+	play(f, fptr);
 	// get_board(f, fptr);
 	
-	// while (1)
+	int	i;
+
+	i = 3;
+	// while (i--)
 	// {
-	// 	store_data(f);
-		//place_piece(f)
+	// 	store_data(f, fptr);
+	// 	// place_piece(f)
 	// }
 	return (0);
 }
