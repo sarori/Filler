@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:54:47 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 01:37:08 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 01:38:48 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,17 @@ void    set_heatmap(t_set *f, FILE *fptr)
 	}
 
     y_cnt = 0;
-    while (f->board_size.y > y_cnt)
-	{
-		x_cnt = 0;
-		while (f->board_size.x > x_cnt)
-		{
-			fprintf(fptr, "%d ", f->heatmap[y_cnt][x_cnt]);
-			x_cnt++;
-		}
-        fprintf(fptr, "\n");
-		y_cnt++;
-	}
+    // while (f->board_size.y > y_cnt)
+	// {
+	// 	x_cnt = 0;
+	// 	while (f->board_size.x > x_cnt)
+	// 	{
+	// 		fprintf(fptr, "%d ", f->heatmap[y_cnt][x_cnt]);
+	// 		x_cnt++;
+	// 	}
+    //     fprintf(fptr, "\n");
+	// 	y_cnt++;
+	// }
 
 }
 
