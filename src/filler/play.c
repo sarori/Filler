@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 23:50:00 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/21 23:50:46 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 00:32:33 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void    play(t_set *f, FILE *fptr)
 {
-
+	fprintf(fptr, "play\n");
+    set_heatmap(f, fptr);
+    
 }

@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/21 23:49:00 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 00:31:34 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void	piece_data(t_set *f, char *piece_line, FILE *fptr)
 	char	*line;
 	char	**res;
 	int		cnt;
-	static int	call = 0;
+	static int	count = 0;
 	
 	line = NULL;
 	res = NULL;
 	cnt = 0;
-	if (call++ > 0)
+	if (count++ > 0)
 		free_dpchar(f->piece);
 	res = ft_strsplit(piece_line, ' ');
 	f->piece_size.x = ft_atoi(res[2]);
@@ -69,12 +69,12 @@ void	board_data(t_set *f, char *board_line, FILE *fptr)
 	char	*line;
 	char	**res;
 	int		cnt;
-	static int	call = 0;
+	static int	count = 0;
 
 	line = NULL;
 	res = NULL;
 	cnt = 0;
-	if (call++ > 0)
+	if (count++ > 0)
 		free_dpchar(f->board);
 	res = ft_strsplit(board_line, ' ');
 	f->board_size.x = ft_atoi(res[2]);
