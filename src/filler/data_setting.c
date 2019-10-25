@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 00:31:34 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 15:19:07 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	board_data(t_set *f, char *board_line, FILE *fptr)
 	f->board_size.y = ft_atoi(res[1]);
 	f->board = (char **)malloc(sizeof(char *)*(f->board_size.y + 1));
 	f->board[f->board_size.y] = NULL;
+	if (cnt == 0 && get_next_line_lst(0, &line) > 0)
+		free(line);
 	while (cnt < f->board_size.y && get_next_line_lst(0, &line) > 0)
 	{
 		f->board[cnt] = ft_strdup(line + 4);

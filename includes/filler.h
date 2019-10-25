@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 01:03:22 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 16:52:34 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,6 @@ void    			draw_heatmap(t_set *f, int start, int x, int y, FILE *fptr);
 **----------------------------play-------------------------
 */
 void    			play(t_set *f, FILE *fptr);
+void    			find_spot(t_set *f, FILE *fptr);
+void    			validation(t_set *f, int y, int x, FILE *fptr);
 #endif
