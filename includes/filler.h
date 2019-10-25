@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 16:52:34 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 22:59:58 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ typedef struct		s_set
 	int				**heatmap;
 	char			*p1;
 	char			*p2;
-	int				size;
+	// int				size;
 	int				point;
 
 	t_coor			board_size;
 	t_coor			piece_size;
-	t_coor			bestspot;
+	t_coor			spot;
 }					t_set;
 
 // void	player_data(t_set *f, FILE *fptr);
@@ -65,5 +65,6 @@ void    			draw_heatmap(t_set *f, int start, int x, int y, FILE *fptr);
 */
 void    			play(t_set *f, FILE *fptr);
 void    			find_spot(t_set *f, FILE *fptr);
-void    			validation(t_set *f, int y, int x, FILE *fptr);
+int					validation(t_set *f, int y, int x, FILE *fptr);
+int					count_point(t_set *f, int y, int x, FILE *fptr);
 #endif

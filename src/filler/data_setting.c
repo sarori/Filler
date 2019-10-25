@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 15:19:07 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/24 22:36:40 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	player_data(t_set *f, FILE *fptr)
 
 void	piece_data(t_set *f, char *piece_line, FILE *fptr)
 {
-	char	*line;
-	char	**res;
-	int		cnt;
+	char		*line;
+	char		**res;
+	int			cnt;
 	static int	count = 0;
 	
 	line = NULL;
