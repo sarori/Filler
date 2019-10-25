@@ -1,19 +1,19 @@
 FILL	=	sapark.filler
-VISU	=	visualizer
+# VISU	=	visualizer
 
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -g -fsanitize=address
 # -g -fsanitize=address
 
-LIB		=	-L ~/.brew/lib -l SDL2 -L ~/.brew/lib -l SDL2_ttf
-INCLUDE	=	-Iincludes -Iframeworks/SDL2.framework/includes/SDL2 -Iframeworks/SDL2_ttf.framework/includes
+# LIB		=	-L ~/.brew/lib -l SDL2 -L ~/.brew/lib -l SDL2_ttf
+INCLUDE	=	-Iincludes
 
 SRC		=	$(wildcard src/filler/*.c)
 OBJ		=	$(patsubst src/filler/%.c, obj/filler/%.o, $(SRC))
-SRC_V	=	$(wildcard src/visualizer/*.c)
-OBJ_V	=	$(patsubst src/visualizer/%.c, obj/visualizer/%.o, $(SRC_V))
+# SRC_V	=	$(wildcard src/visualizer/*.c)
+# OBJ_V	=	$(patsubst src/visualizer/%.c, obj/visualizer/%.o, $(SRC_V))
 
-all		:	$(FILL) $(VISU)
+all		:	$(FILL)
 
 obj/%.o	: 	src/%.c
 			@$(CC) $(CFLAGS) $(OPTION) -c -o $@ $< $(INCLUDE)
@@ -24,25 +24,24 @@ $(FILL)	:	obj $(OBJ)
 			@$(CC) -o $(FILL) $(CFLAGS) $(OBJ) libftprintf.a
 			@echo "excutable file $(FILL) has been made"
 
-$(VISU)	:	obj $(OBJ_V)
-			@cd lib && make
-			@mv lib/libftprintf.a .
-			@$(CC) -o $(VISU) $(CFLAGS) $(OBJ_V) libftprintf.a $(INCLUDE) $(LIB)
-			@echo "excutable file $(VISU) has been made"
+# $(VISU)	:	obj $(OBJ_V)
+# 			@cd lib && make
+# 			@mv lib/libftprintf.a .
+# 			@$(CC) -o $(VISU) $(CFLAGS) $(OBJ_V) libftprintf.a $(INCLUDE) $(LIB)
+# 			@echo "excutable file $(VISU) has been made"
 
 obj		:
 			@mkdir obj
 			@mkdir obj/filler
-			@mkdir obj/visualizer
-
+			
 clean	:
 			-cd lib && make clean
 			-rm -rf obj
 
 fclean	:	clean
-			-rm -f $(FILL) $(VISU)
+			-rm -f $(FILL)
 			-rm -f libftprintf.a
 
-re		:	fclean $(FILL) $(VISU)
+re		:	fclean $(FILL)
 
 .PHONY	:	clean fclean re

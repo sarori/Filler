@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:54:47 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/24 15:40:41 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/25 12:16:16 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	init_heatmap(t_set *f, FILE *fptr)
 	int         x_cnt;
     int         y_cnt;
 
-	x_cnt = 0;
 	y_cnt = 0;
 	while (f->board_size.y > y_cnt)
 	{
@@ -60,8 +59,8 @@ void    set_heatmap(t_set *f, FILE *fptr)
     f->heatmap = (int **)malloc(sizeof(int *) * f->board_size.y);
 	while (f->board_size.y > y_cnt)
 		f->heatmap[y_cnt++] = (int *)malloc(sizeof(int) * f->board_size.x);
-	y_cnt= 0;
 	init_heatmap(f, fptr);
+	y_cnt= 0;
 	while (f->board_size.y > y_cnt)
 	{
 		x_cnt = 0;
@@ -102,9 +101,9 @@ void    draw_heatmap(t_set *f, int start, int x, int y, FILE *fptr)
     // fprintf(fptr, "start:%d\n", start);
     if (res[y][x] >= start)
         res[y][x] = start++;
-    if (x - 1 > 0 && (res[y][x - 1] > start || res[y][x - 1] == 0) && !ft_strchr(f->p2, f->board[y][x - 1]))
+    if (x - 1 >= 0 && (res[y][x - 1] > start || res[y][x - 1] == 0) && !ft_strchr(f->p2, f->board[y][x - 1]))
         draw_heatmap(f, start, x - 1, y, fptr);
-    if (y - 1 > 0 && (res[y - 1][x] > start || res[y - 1][x] == 0) && !ft_strchr(f->p2, f->board[y - 1][x]))
+    if (y - 1 >= 0 && (res[y - 1][x] > start || res[y - 1][x] == 0) && !ft_strchr(f->p2, f->board[y - 1][x]))
         draw_heatmap(f, start, x, y - 1, fptr);
     if (x + 1 < f->board_size.x && (res[y][x + 1] > start || res[y][x + 1] == 0) && !ft_strchr(f->p2, f->board[y][x + 1]))
         draw_heatmap(f, start, x + 1, y, fptr);

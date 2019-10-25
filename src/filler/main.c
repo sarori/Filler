@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:52:32 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 01:04:03 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/25 12:43:36 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ int	main(void)
 	t_set	*f;
 
 	f = ft_memalloc(sizeof(t_set));
-	if (!f->p1 || !f->p2)
+	if (!f->p1)
 		player_data(f, fptr);
-	// store_data(f, fptr);
-	// play(f, fptr);
-	// play(f, fptr);
 	while (1)
 	{
 		store_data(f, fptr);

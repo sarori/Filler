@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 01:02:48 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/25 12:45:55 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	player_data(t_set *f, FILE *fptr)
 	if (ft_strcmp(res[0], "$$$") || ft_strcmp(res[1], "exec") || ft_strcmp(res[3], ":"))
 		return ;
 	f->p1 = !ft_strcmp(res[2], "p1") ? "oO" : "xX";
-	f->p2 = !ft_strcmp(res[2], "p1") ? "oO" : "xX";
+	f->p2 = !ft_strcmp(res[2], "p1") ? "xX" : "oO";
 	fprintf(fptr, "f->p1:%s\n", f->p1);
 	fprintf(fptr, "f->p2:%s\n", f->p2);
 	free_dpchar(res);
