@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 02:41:13 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 12:40:28 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/25 23:02:27 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,15 @@ typedef struct		s_set
 **----------------------data_setting----------------------
 */
 void				player_data(t_set *f, FILE *fptr);
-void				piece_data(t_set *f, char *piece_line, FILE *fptr);
+// void				piece_data(t_set *f, char *piece_line, FILE *fptr);
 void				store_data(t_set *f, FILE *fptr);
-void				board_data(t_set *f, char *board_line, FILE *fptr);
+// void				board_data(t_set *f, char *board_line, FILE *fptr);
+
+void	get_current_piece(t_set *f, int lines, FILE *fptr);
+void	get_current_map(t_set *f, int lines, FILE *fptr);
+void	player_data(t_set *f, FILE *fptr);
+int		ft_c_cnt(char *str, char c);
+void	get_info_of(t_coor *size, char *line);
 /*
 **---------------------heatmap_setting---------------------
 */

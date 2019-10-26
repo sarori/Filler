@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:54:47 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 12:16:16 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 01:13:53 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	init_heatmap(t_set *f, FILE *fptr)
 {
     fprintf(fptr, "init_heatmap\n");
+
 	int         x_cnt;
     int         y_cnt;
 
@@ -29,6 +30,7 @@ void	init_heatmap(t_set *f, FILE *fptr)
 		}
 		y_cnt++;
 	}
+	fprintf(fptr, "finish\n");
 }
 
 void	free_dpint(t_set *f)
@@ -60,18 +62,25 @@ void    set_heatmap(t_set *f, FILE *fptr)
 	while (f->board_size.y > y_cnt)
 		f->heatmap[y_cnt++] = (int *)malloc(sizeof(int) * f->board_size.x);
 	init_heatmap(f, fptr);
+	fprintf(fptr, "first\n");
 	y_cnt= 0;
+
+
 	while (f->board_size.y > y_cnt)
 	{
 		x_cnt = 0;
 		while (f->board_size.x > x_cnt)
 		{
 			if (ft_strchr(f->p2, f->board[y_cnt][x_cnt]))
-				draw_heatmap(f, start, x_cnt, y_cnt, fptr);
+				draw_heatmap(f, 0, x_cnt, y_cnt, fptr);
 			x_cnt++;
 		}
 		y_cnt++;
 	}
+
+
+	fprintf(fptr, "abc\n");
+	
 
     // print
     // y_cnt = 0;
@@ -91,22 +100,24 @@ void    set_heatmap(t_set *f, FILE *fptr)
 
 void    draw_heatmap(t_set *f, int start, int x, int y, FILE *fptr)
 {
-    // fprintf(fptr, "get_heatmap\n");
+    // fprintf(fptr, "draw_heatmap\n");
     int **res;
 
     res = f->heatmap;
-    if (x < 0 || y < 0 || f->board_size.x < x || f->board_size.y < y || ft_strchr(f->p1, f->board[y][x]))
+    if (x < 0 || f->board_size.x < x || y < 0 || f->board_size.y < y || ft_strchr(f->p1, f->board[y][x]))
         return ;
+	fprintf(fptr, "in draw_heatmap\n");
     // fprintf(fptr, "%d, %d\n", x, y);
     // fprintf(fptr, "start:%d\n", start);
     if (res[y][x] >= start)
         res[y][x] = start++;
     if (x - 1 >= 0 && (res[y][x - 1] > start || res[y][x - 1] == 0) && !ft_strchr(f->p2, f->board[y][x - 1]))
         draw_heatmap(f, start, x - 1, y, fptr);
+	if (x + 1 < f->board_size.x && (res[y][x + 1] > start || res[y][x + 1] == 0) && !ft_strchr(f->p2, f->board[y][x + 1]))
+        draw_heatmap(f, start, x + 1, y, fptr);
     if (y - 1 >= 0 && (res[y - 1][x] > start || res[y - 1][x] == 0) && !ft_strchr(f->p2, f->board[y - 1][x]))
         draw_heatmap(f, start, x, y - 1, fptr);
-    if (x + 1 < f->board_size.x && (res[y][x + 1] > start || res[y][x + 1] == 0) && !ft_strchr(f->p2, f->board[y][x + 1]))
-        draw_heatmap(f, start, x + 1, y, fptr);
     if (y + 1 < f->board_size.y && (res[y + 1][x] > start || res[y + 1][x] == 0) && !ft_strchr(f->p2, f->board[y + 1][x]))
         draw_heatmap(f, start, x, y + 1, fptr);
+	fprintf(fptr, "finish_heatmap\n");
 }

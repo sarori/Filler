@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 23:50:00 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 12:41:20 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 00:53:05 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ void    play(t_set *f, FILE *fptr)
 		f->spot.x = 0;
 		f->spot.y = 0;
 	}
-	// fprintf(fptr, "%d %d\n", f->spot.y, f->spot.x);
-	ft_printf("%d %d\n", f->spot.y, f->spot.x);
+	// ft_printf("%d %d\n", f->spot.y, f->spot.x);
+	fprintf(fptr, "%d %d\n", f->spot.y, f->spot.x);
+	
 }
 
 int    validation(t_set *f, int y, int x, FILE *fptr)
 {
-	// fprintf(fptr, "validation\n");
+	fprintf(fptr, "validation\n");
 	int	x_cnt;
 	int	y_cnt;
 	int	cnt;
@@ -57,7 +58,7 @@ int    validation(t_set *f, int y, int x, FILE *fptr)
 		}
 		y_cnt++;
 	}
-	fprintf(fptr, "cnt:%d\n", cnt);
+	// fprintf(fptr, "cnt:%d\n", cnt);
 	return (cnt == 1 ? 1 : 0);
 }
 
@@ -104,13 +105,13 @@ void    find_spot(t_set *f, FILE *fptr)
 			&& validation(f, y, x, fptr)
 			&& (point = count_point(f, y, x, fptr)) <= f->point)
 			{
-				fprintf(fptr, "a\n");
+				// fprintf(fptr, "a\n");
 				f->point = point;
 				f->spot.x = x;
 				f->spot.y = y;
-				fprintf(fptr, "spot.x:%d\n", f->spot.x);
-				fprintf(fptr, "spot.y:%d\n", f->spot.y);
-				fprintf(fptr, "point:%d\n", f->point);
+				// fprintf(fptr, "spot.x:%d\n", f->spot.x);
+				// fprintf(fptr, "spot.y:%d\n", f->spot.y);
+				// fprintf(fptr, "point:%d\n", f->point);
 			}
             x++;
         }
