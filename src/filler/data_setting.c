@@ -6,13 +6,13 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 12:45:55 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 19:25:52 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void	player_data(t_set *f, FILE *fptr)
+void	player_data(t_set *f)
 {	
 	char	*line;
 	char	**res;
@@ -30,12 +30,10 @@ void	player_data(t_set *f, FILE *fptr)
 		return ;
 	f->p1 = !ft_strcmp(res[2], "p1") ? "oO" : "xX";
 	f->p2 = !ft_strcmp(res[2], "p1") ? "xX" : "oO";
-	fprintf(fptr, "f->p1:%s\n", f->p1);
-	fprintf(fptr, "f->p2:%s\n", f->p2);
 	free_dpchar(res);
 }
 
-void	piece_data(t_set *f, char *piece_line, FILE *fptr)
+void	piece_data(t_set *f, char *piece_line)
 {
 	char		*line;
 	char		**res;
@@ -52,19 +50,16 @@ void	piece_data(t_set *f, char *piece_line, FILE *fptr)
 	f->piece_size.y = ft_atoi(res[1]);
 	f->piece = (char **)malloc(sizeof(char *)*(f->piece_size.y + 1));
 	f->piece[f->piece_size.y] = NULL;
-	fprintf(fptr, "tmp->piecex :%d\n", f->piece_size.x);
-	fprintf(fptr, "tmp->piecey :%d\n", f->piece_size.y);
 	while (cnt < f->piece_size.y && get_next_line_lst(0, &line) > 0)
 	{
 		f->piece[cnt] = ft_strdup(line);
-		fprintf(fptr, "piece[%d]%s\n", cnt, f->piece[cnt]);
 		cnt++;
 		free(line);
 	}
 	free_dpchar(res);
 }
 
-void	board_data(t_set *f, char *board_line, FILE *fptr)
+void	board_data(t_set *f, char *board_line)
 {
 	char	*line;
 	char	**res;
@@ -86,14 +81,13 @@ void	board_data(t_set *f, char *board_line, FILE *fptr)
 	while (cnt < f->board_size.y && get_next_line_lst(0, &line) > 0)
 	{
 		f->board[cnt] = ft_strdup(line + 4);
-		fprintf(fptr, "%s\n", f->board[cnt]);
 		cnt++;
 		free(line);
 	}
 	free_dpchar(res);
 }
 
-void	store_data(t_set *f, FILE *fptr)
+void	store_data(t_set *f)
 {
 	char	*line;
 
@@ -101,10 +95,10 @@ void	store_data(t_set *f, FILE *fptr)
 	while (get_next_line_lst(0, &line) > 0)
 	{
 		if (ft_strstr(line, "Plateau "))
-			board_data(f, line, fptr);
+			board_data(f, line);
 		else if (ft_strstr(line, "Piece "))
 		{
-			piece_data(f, line, fptr);
+			piece_data(f, line);
 			break ;
 		}
 		free(line);

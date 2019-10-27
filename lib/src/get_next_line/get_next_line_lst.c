@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 21:17:32 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/19 22:14:19 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 19:18:43 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char		*ft_strjoin_len(char *s1, char *s2, int len)
 	char	*res;
 	int		n;
 
-	n = (int)ft_strlen(s1) + (len + 1);
+	n = (int)ft_strlen(s1) + ++len;
 	str = ft_strnew(n);
 	res = str;
 	while (*s1)
