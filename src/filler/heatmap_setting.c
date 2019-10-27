@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:54:47 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/25 20:34:31 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 19:30:29 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void    set_heatmap(t_set *f)
 		f->heatmap[y_cnt++] = (int *)malloc(sizeof(int) * f->board_size.x);
 	init_heatmap(f);
 	y_cnt= 0;
+
+
 	while (f->board_size.y > y_cnt)
 	{
 		x_cnt = 0;
