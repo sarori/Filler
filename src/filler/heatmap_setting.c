@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 23:54:47 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/26 19:30:29 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 20:01:13 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ void    set_heatmap(t_set *f)
 		f->heatmap[y_cnt++] = (int *)malloc(sizeof(int) * f->board_size.x);
 	init_heatmap(f);
 	y_cnt= 0;
-
-
 	while (f->board_size.y > y_cnt)
 	{
 		x_cnt = 0;
@@ -78,7 +76,6 @@ void    draw_heatmap(t_set *f, int start, int x, int y)
 {
     int **res;
 
-   
     if (x < 0 || f->board_size.x < x || y < 0 || f->board_size.y < y || ft_strchr(f->p1, f->board[y][x]))
         return ;
 	res = f->heatmap;
@@ -90,7 +87,6 @@ void    draw_heatmap(t_set *f, int start, int x, int y)
         draw_heatmap(f, start, x + 1, y);
     if (y - 1 >= 0 && (res[y - 1][x] > start || res[y - 1][x] == 0) && !ft_strchr(f->p2, f->board[y - 1][x]))
         draw_heatmap(f, start, x, y - 1);
-    
     if (y + 1 < f->board_size.y && (res[y + 1][x] > start || res[y + 1][x] == 0) && !ft_strchr(f->p2, f->board[y + 1][x]))
         draw_heatmap(f, start, x, y + 1);
 }

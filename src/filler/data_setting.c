@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 22:22:39 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/26 19:28:32 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 19:51:01 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	piece_data(t_set *f, char *piece_line)
 
 void	board_data(t_set *f, char *board_line)
 {
-	char	*line;
-	char	**res;
-	int		cnt;
+	char		*line;
+	char		**res;
+	int			cnt;
 	static int	count = 0;
 
 	line = NULL;
@@ -104,4 +104,3 @@ void	store_data(t_set *f)
 		free(line);
 	}
 }
-

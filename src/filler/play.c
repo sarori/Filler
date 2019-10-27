@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 23:50:00 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/26 19:31:42 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 20:00:51 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void    play(t_set *f)
     f->spot.x = -1;
     f->spot.y = -1;
     f->point = 777;
-    
     find_spot(f);
 	if (f->spot.x < 0 && f->spot.y < 0)
 	{
@@ -93,7 +92,7 @@ void    find_spot(t_set *f)
         while (f->board_size.x > x)
         {
             if ( f->board_size.x > x && f->board_size.y > y 
-			&& !ft_strchr(f->p2, f->board[y][x]) && validation(f, y, x)
+			&& !ft_strchr(f->p2, f->board[y][x]) && validation(f, y, x) != 0
 			&& (point = count_point(f, y, x)) <= f->point)
 			{
 				f->point = point;

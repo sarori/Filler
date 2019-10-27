@@ -6,7 +6,7 @@
 /*   By: sapark <sapark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 21:17:32 by sapark            #+#    #+#             */
-/*   Updated: 2019/10/26 19:18:43 by sapark           ###   ########.fr       */
+/*   Updated: 2019/10/26 20:02:04 by sapark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static char		*ft_strjoin_len(char *s1, char *s2, int len)
 {
-	//libft에 넣기
 	char	*str;
 	char	*res;
 	int		n;
@@ -32,7 +31,6 @@ static char		*ft_strjoin_len(char *s1, char *s2, int len)
 
 static char	*ft_freejoin_n(char *tmp, char *buf, int read_cnt)
 {
-	//libft에 넣기
 	char	*line;
 
 	line = tmp;
